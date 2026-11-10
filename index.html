@@ -1,0 +1,440 @@
+<title>CA Govinda Tamang</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Section-wise coverage of Nepalese Acts for CA students – CAP III / CA Membership and CAP II / Application Level decks, compilations and quizzes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<!-- Analytics (live site only): create a free GoatCounter account, then replace YOURCODE and remove the comment marks.
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
+<style>
+/* Layout: sticky top bar → hash-routed views (home, cap-iii, cap-ii, quiz, banking, about); content in a 1120px column, cards in auto-fill grids. */
+:root{
+  --bg:#F6F7FA; --surface:#FFFFFF; --ink:#18213A; --muted:#5B6478; --line:#DDE2EB;
+  --navy:#14213D; --crimson:#B3122E; --crimson-soft:#F8E3E7; --gold:#B8862B; --ok:#2E7D4F;
+  --chip:#EEF1F6; --hero-ink:#FFFFFF;
+  --f-display:"Spectral", Georgia, "Times New Roman", serif;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1424; --surface:#161E33; --ink:#E7EAF2; --muted:#A3ACC0; --line:#2A3550;
+  --navy:#0A1022; --crimson:#E2475F; --crimson-soft:#3A1820; --gold:#D9A94A; --ok:#5FBF86; --chip:#212B45; --hero-ink:#FFFFFF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1424; --surface:#161E33; --ink:#E7EAF2; --muted:#A3ACC0; --line:#2A3550;
+  --navy:#0A1022; --crimson:#E2475F; --crimson-soft:#3A1820; --gold:#D9A94A; --ok:#5FBF86; --chip:#212B45; --hero-ink:#FFFFFF; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--navy);color:#fff}
+header.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
+.brand b{font-family:var(--f-display);font-size:20px;font-weight:700;letter-spacing:.2px}
+.brand small{display:block;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#C7CEDD}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav a{color:#DCE2EE;text-decoration:none;font-size:14px;font-weight:500;padding:7px 12px;border-radius:6px}
+nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.1);color:#fff;outline:none}
+nav a[aria-current="page"]{background:#fff;color:var(--navy)}
+:root[data-theme="dark"] nav a[aria-current="page"]{color:#0A1022}
+.draft{background:var(--crimson-soft);color:var(--ink);font-size:13px}
+.draft .wrap{padding-block:7px}
+main{padding-block:28px 56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;color:var(--ink)}
+h2{font-size:clamp(24px,3.2vw,32px);font-weight:700}
+h3{font-size:19px;font-weight:600}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--crimson)}
+.lead{color:var(--muted);max-width:64ch;margin:8px 0 0}
+section+section{margin-top:44px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+
+/* hero */
+.hero{background:var(--navy);color:var(--hero-ink);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1.35fr .65fr;position:relative}
+.hero-text{padding:36px 36px 32px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,52px);line-height:1.05;font-weight:700}
+.hero p{color:#CED5E3;margin:0;max-width:56ch}
+.hero .tags{display:flex;gap:8px;flex-wrap:wrap}
+.hero .tags span{font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:#E6EAF2}
+.hero-photo{position:relative;min-height:280px;background:#1D2C4F}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(20,33,61,0) 35%)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:600;font-size:14.5px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--f-body)}
+.btn.red{background:var(--crimson);color:#fff}
+.btn.ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}
+.btn.line{border-color:var(--line);color:var(--ink);background:var(--surface)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* track cards */
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.track{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
+.track:hover{border-color:var(--crimson)}
+.track .k{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.track p{margin:0;color:var(--muted);font-size:14.5px}
+.track .go{margin-top:auto;font-weight:600;font-size:14px;color:var(--crimson)}
+.soon{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--muted)}
+
+/* feature (exam corner) */
+.feature{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.mat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mat .type{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+.mat p{margin:0;font-size:14.5px;color:var(--muted)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.meta span{background:var(--chip);padding:2px 8px;border-radius:5px}
+.mat .btn{align-self:flex-start;margin-top:6px}
+.mat .btn.dl{background:var(--navy);color:#fff}
+:root[data-theme="dark"] .mat .btn.dl{background:#2B3B63}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mat .btn.dl{background:#2B3B63}}
+
+/* act table */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 240px;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;font-size:15px}
+.search:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:inherit;font-size:13.5px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.filters button:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.acts{margin-top:14px;display:grid;gap:10px}
+.act{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px 18px;align-items:center}
+.act .nm{font-weight:600;font-size:16px}
+.act .sub{font-size:13px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;margin-top:2px}
+.act .cat{font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:999px;background:var(--chip)}
+.act .links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.pill{display:inline-flex;flex-direction:column;align-items:flex-start;gap:0;padding:6px 11px;border-radius:8px;border:1px solid var(--line);text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);min-width:118px}
+.pill small{font-family:var(--f-mono);font-weight:500;font-size:11px;color:var(--muted)}
+.pill.on{border-color:var(--navy)}
+.pill.on:hover{background:var(--chip)}
+.pill.off{color:var(--muted);border-style:dashed;cursor:default}
+.pill:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.weight{font-family:var(--f-mono);font-size:12px;color:var(--crimson)}
+.empty{padding:18px;color:var(--muted);text-align:center;border:1px dashed var(--line);border-radius:10px}
+
+/* playlist band */
+.band{background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:12px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 20px}
+.band .yt{width:52px;height:52px;border-radius:12px;background:var(--crimson);display:grid;place-items:center}
+.band .yt svg{width:26px;height:26px;fill:#fff}
+.band p{margin:2px 0 0;color:var(--muted);font-size:14.5px}
+
+/* about */
+.about{display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:start}
+.about img{width:100%;border-radius:12px;display:block}
+.about .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;min-width:0}
+.about ul{margin:10px 0 0;padding-left:20px;color:var(--ink)}
+.contact{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.contact code{font-family:var(--f-mono);font-size:14px;background:var(--chip);padding:7px 10px;border-radius:6px;user-select:all;word-break:break-all}
+
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;max-width:min(92vw,520px)}
+
+
+/* tabs */
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-top:18px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:600;font-size:15px;padding:10px 14px;border:0;background:none;color:var(--muted);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--crimson)}
+.tabs button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.panel{padding-top:20px}
+/* act cards */
+.grid-acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:14px}
+.acard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.thumb{position:relative;display:block;aspect-ratio:16/9;max-width:100%;background:var(--navy);text-decoration:none;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#fff;background:linear-gradient(135deg,var(--navy),#2A3E6E)}
+.thumb .ph b{font-family:var(--f-display);font-size:19px;line-height:1.2;max-width:85%}
+.thumb .ph small{font-size:12px;color:#C7CEDD;margin-top:4px}
+.thumb .play{position:absolute;right:12px;top:12px;width:46px;height:32px;border-radius:9px;background:var(--crimson);display:grid;place-items:center}
+.thumb .play svg{width:16px;height:16px;fill:#fff}
+.thumb.none .play{background:rgba(255,255,255,.18)}
+.thumb:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.abody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px}
+.abody h3{font-size:18px}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.mrow .l{min-width:0}
+.mrow .l b{display:block;font-size:14px;font-weight:600}
+.mrow .l small{font-size:12px;color:var(--muted)}
+.mrow .mt{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.mbtn{font:inherit;font-size:13px;font-weight:600;padding:6px 11px;border-radius:7px;text-decoration:none;white-space:nowrap;border:1px solid var(--navy);color:var(--ink);background:var(--surface)}
+.mbtn:hover{background:var(--chip)}
+.mbtn.off{border:1px dashed var(--line);color:var(--muted);cursor:default;background:none}
+.mbtn:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+/* video strip */
+.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.vid{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:8px;min-width:0}
+.vid .thumb{border-radius:10px}
+.vid span{font-weight:600;font-size:14.5px}
+.vid small{color:var(--muted);font-size:12.5px}
+.tagarea{align-self:flex-start;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--chip);color:var(--muted);margin-bottom:-4px}
+.covers{margin:-4px 0 0;font-size:13px;color:var(--muted)}
+.also{display:block;font-size:13px;font-weight:600;color:var(--crimson);text-decoration:none;margin-top:-2px}
+.also:hover{text-decoration:underline}
+.soonpage{text-align:center;padding-block:70px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.soonpage h2{font-size:clamp(34px,6vw,56px)}
+.placeholder{border:1px dashed var(--line);background:transparent;align-self:start}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .hero-photo{min-height:220px;order:-1}
+  .hero-photo::after{background:linear-gradient(0deg,var(--navy) 0%,rgba(20,33,61,0) 45%)}
+  .hero-text{padding:22px}
+  .act{grid-template-columns:1fr}
+  .act .links{justify-content:flex-start}
+  .band{grid-template-columns:auto 1fr}
+  .band .btn{grid-column:1/-1}
+  .about{grid-template-columns:1fr}
+  .about img{max-width:220px}
+  nav{margin-left:0}
+}
+@media (prefers-reduced-motion:no-preference){.track,.pill,.btn{transition:border-color .15s,background .15s}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home"><img src="assets/govinda.jpg" alt="CA Govinda Tamang"><span><b>CA Govinda Tamang</b><small>Nepal Laws Explained</small></span></a>
+    <nav aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#cap-iii">CAP III / Membership</a>
+      <a href="#cap-ii">CAP II / Application</a>
+      <a href="#banking">Banking Exams</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+<div class="draft" id="draftbar"><div class="wrap">Draft preview. Downloads, YouTube thumbnails and analytics switch on when this is hosted on Cloudflare Pages.</div></div>
+
+<main class="wrap">
+
+<!-- HOME -->
+<div data-view="home">
+  <section class="hero">
+    <div class="hero-text">
+      <span class="eyebrow" style="color:#F2A7B4">Chartered Accountant · ICAN &amp; ICAI</span>
+      <h1>Nepal Laws Explained</h1>
+      <p>Complete section-wise coverage of Nepal's Acts for CA students, bankers, auditors and compliance professionals. Watch the video, read the Act, revise from the summaries and question compilations.</p>
+      <div class="tags"><span>Banking</span><span>Corporate</span><span>Finance</span><span>Tax</span><span>Compliance</span></div>
+      <div class="btns">
+        <a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="yt-subscribe-hero"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15V9l5.8 3-5.8 3Z"/></svg>Subscribe on YouTube</a>
+        <a class="btn ghost" href="#cap-iii">CAP III / Membership</a>
+        <a class="btn ghost" href="#cap-ii">CAP II / Application</a>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="assets/govinda.jpg" alt=""></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><span class="eyebrow">Watch on YouTube</span><h2>Latest videos</h2></div><a class="btn line" href="https://www.youtube.com/@CAGovinda/videos" target="_blank" rel="noopener" data-goatcounter-click="yt-all-videos">All videos</a></div>
+    <div class="vids" id="latest-vids"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><span class="eyebrow">Updated automatically</span><h2>Latest uploads</h2></div></div>
+    <div class="feature" id="latest-files"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><span class="eyebrow">Choose your track</span><h2>Study by exam level</h2></div></div>
+    <div class="tracks">
+      <a class="track" href="#cap-iii"><span class="k">ICAN · Paper 4 · Corporate Laws</span><h3>CAP III / CA Membership</h3><p>Act-wise materials and an exam corner with master revision and penalties decks.</p><span class="go">Open section →</span></a>
+      <a class="track" href="#cap-ii"><span class="k">ICAN · Paper 3 · Applied Law</span><h3>CAP II / Application Level</h3><p>Act-wise materials and an exam corner with the MCQ practice quiz.</p><span class="go">Open section →</span></a>
+      <a class="track" href="#banking"><span class="k">NRB · Banks · Financial institutions</span><h3>Banking Exams <span class="soon">Coming soon</span></h3><p>A dedicated section for banking exams.</p><span class="go">Take a look →</span></a>
+    </div>
+  </section>
+</div>
+
+<!-- CAP III -->
+<div data-view="cap-iii" hidden>
+  <section>
+    <span class="eyebrow">CAP III / CA Membership</span>
+    <h2>Corporate Laws</h2>
+    <p class="lead">Acts are arranged by exam weightage – the most frequently examined first. Each Act has its video, the official Nepali text, an English translation, a summary and a compilation of ICAN suggested answers, RTPs and PEPTs. Every file shows its version and upload date.</p>
+    <div class="band" style="margin-top:18px">
+      <div class="yt"><svg viewBox="0 0 24 24"><path d="M9.8 15V9l5.8 3-5.8 3Z"/></svg></div>
+      <div><h3>CAP III / CA Membership playlist</h3><p>All videos for this level in one playlist.</p></div>
+      <a class="btn red" href="#" id="pl-cap3" target="_blank" rel="noopener" data-goatcounter-click="yt-playlist-cap3">Watch on YouTube</a>
+    </div>
+    <div class="tabs" role="tablist" data-tabs="c3">
+      <button role="tab" aria-selected="true" data-t="acts">Act-wise materials</button>
+      <button role="tab" aria-selected="false" data-t="exam">Exam corner</button>
+    </div>
+    <div class="panel" data-panel="c3-acts">
+      <div class="tools">
+        <input class="search" id="q-c3" type="search" placeholder="Search an Act, e.g. BAFIA, Insurance" aria-label="Search CAP III Acts">
+        <div class="filters" id="f-c3" role="group" aria-label="Filter by area"></div>
+      </div>
+      <div class="grid-acts" id="list-c3"></div>
+    </div>
+    <div class="panel" data-panel="c3-exam" hidden><div class="feature" id="exam-c3"></div></div>
+  </section>
+</div>
+
+<!-- CAP II -->
+<div data-view="cap-ii" hidden>
+  <section>
+    <span class="eyebrow">CAP II / Application Level</span>
+    <h2>Applied Law</h2>
+    <p class="lead">Syllabus-aligned material for ICAN Paper 3, arranged in the order of the seven syllabus areas with their exam weighting, plus an MCQ quiz to test yourself.</p>
+    <div class="band" style="margin-top:18px">
+      <div class="yt"><svg viewBox="0 0 24 24"><path d="M9.8 15V9l5.8 3-5.8 3Z"/></svg></div>
+      <div><h3>CAP II / Application Level playlist</h3><p>All videos for this level in one playlist.</p></div>
+      <a class="btn red" href="#" id="pl-cap2" target="_blank" rel="noopener" data-goatcounter-click="yt-playlist-cap2">Watch on YouTube</a>
+    </div>
+    <div class="tabs" role="tablist" data-tabs="c2">
+      <button role="tab" aria-selected="true" data-t="acts">Act-wise materials</button>
+      <button role="tab" aria-selected="false" data-t="exam">Exam corner</button>
+    </div>
+    <div class="panel" data-panel="c2-acts">
+      <div class="tools">
+        <input class="search" id="q-c2" type="search" placeholder="Search an Act" aria-label="Search CAP II Acts">
+        <div class="filters" id="f-c2" role="group" aria-label="Filter by area"></div>
+      </div>
+      <div class="grid-acts" id="list-c2"></div>
+    </div>
+    <div class="panel" data-panel="c2-exam" hidden><div class="feature" id="exam-c2"></div></div>
+  </section>
+</div>
+
+<!-- BANKING -->
+<div data-view="banking" hidden>
+  <section class="soonpage">
+    <span class="eyebrow">Banking Exams</span>
+    <h2>Coming soon</h2>
+    <p class="lead">A dedicated section for banking exams is on its way. Subscribe on YouTube to hear when it opens.</p>
+    <div class="btns" style="justify-content:center"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="yt-subscribe-banking">Subscribe on YouTube</a></div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div data-view="about" hidden>
+  <section class="about">
+    <img src="assets/govinda.jpg" alt="CA Govinda Tamang">
+    <div class="card">
+      <span class="eyebrow">About</span>
+      <h2>CA Govinda Tamang</h2>
+      <p class="lead">Chartered Accountant, member of ICAN and ICAI, working in internal audit. This channel gives students and professionals a complete, section-wise walk-through of Nepal's Acts, updated for the latest amendments.</p>
+      <ul>
+        <li>Section-wise videos on Nepal's Acts on YouTube</li>
+        <li>English translations of Nepali Acts with amendment notes</li>
+        <li>ICAN suggested answers, RTPs and PEPTs compiled topic-wise</li>
+      </ul>
+      <div class="btns" style="margin-top:16px"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="yt-subscribe-about">Subscribe on YouTube</a></div>
+      <h3 style="margin-top:20px">Notes and queries</h3>
+      <div class="contact"><code id="mail">govintamang2054@gmail.com</code><button class="btn line" id="copy" type="button">Copy email</button></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 CA Govinda Tamang. Free for personal study; please link back instead of re-uploading.</span><span>Amendments covered up to 31 August 2026</span></div></footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="materials.js"></script>
+<script>
+const {CAP3_ACTS, CAP3_EXAM, CAP2_ACTS, CAP2_EXAM, PLAYLISTS} = window;
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const LIVE = !/claude/.test(location.hostname);
+if (LIVE) document.getElementById('draftbar').hidden = true;
+const toast = m => { const t=$("#toast"); t.textContent=m; t.hidden=false; clearTimeout(toast.k); toast.k=setTimeout(()=>t.hidden=true,2600); };
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const fmt = d => d ? new Date(d+"T00:00:00").toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}) : "";
+const ytId = u => { if(!u) return null; const m=String(u).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/); return m?m[1]:(/^[\w-]{11}$/.test(u)?u:null); };
+const PLAY = '<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
+
+function thumb(a, tag, title){
+  const v = a.video, id = ytId(v && (v.link || v)); title = title || a.name;
+  if(!id) return `<div class="thumb none"><div class="ph"><b>${title}</b><small>${a.soon ? "Coming soon" : "Video coming soon"}</small></div>${PLAY}</div>`;
+  return `<a class="thumb" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" data-goatcounter-click="yt-${tag}-${slug(title)}">
+    <div class="ph"><b>${title}</b><small>Watch on YouTube</small></div>
+    <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Video: ${title}" loading="lazy" onerror="this.remove()">${PLAY}</a>`;
+}
+const fileBtn = (f, tag) => f && f.file ? `<a class="mbtn" href="${f.file}" download data-dl data-goatcounter-click="${tag}">PDF</a>` : `<span class="mbtn off">Coming soon</span>`;
+function row(label, sub, f, tag){
+  const meta = f && f.file ? `<span class="mt">${f.version} · ${fmt(f.date)}</span>` : `<small>${sub}</small>`;
+  return `<div class="mrow"><div class="l"><b>${label}</b>${meta}</div>${fileBtn(f, tag)}</div>`;
+}
+function npRows(np, tag){
+  const list = !np ? [] : Array.isArray(np) ? np : [np];
+  if(!list.length) return `<div class="mrow"><div class="l"><b>Bare Act (Nepali)</b><small>Official – Nepal Law Commission</small></div><span class="mbtn off">Link coming soon</span></div>`;
+  return list.map((x,i) => `<div class="mrow"><div class="l"><b>${list.length > 1 ? (x.label || "Bare Act (Nepali)") : "Bare Act (Nepali)"}</b><small>Official – ${/mof\.gov/.test(x.link) ? "Ministry of Finance" : "Nepal Law Commission"}</small></div><a class="mbtn" href="${x.link}" target="_blank" rel="noopener" data-goatcounter-click="${tag}-${i}">Open</a></div>`).join("");
+}
+function actCard(a, lvl){
+  const s = slug(a.name);
+  const more = (a.more || []).filter(m=>ytId(m.link)).map(m => `<a class="also" href="https://www.youtube.com/watch?v=${ytId(m.link)}" target="_blank" rel="noopener" data-goatcounter-click="yt-${lvl}-${slug(m.label)}">▶ Also watch: ${m.label}${m.date ? " · " + fmt(m.date) : ""}</a>`).join("");
+  return `<article class="acard">${thumb(a,lvl)}<div class="abody"><span class="tagarea">${a.area}</span><h3>${a.name}</h3>${a.covers ? `<p class="covers">${a.covers}</p>` : ""}${more}<div>
+    ${npRows(a.bareNp, `np-${lvl}-${s}`)}
+    ${row("Bare Act (English)","Unofficial translation",a.bareEn,`en-${lvl}-${s}`)}
+    ${row("Act Summary","Section-wise summary deck",a.summary,`sum-${lvl}-${s}`)}
+    ${row("Suggested Answers / RTP / PEPT","Topic-wise compilation",a.comp,`comp-${lvl}-${s}`)}
+  </div></div></article>`;
+}
+function examCard(m){
+  if(m.placeholder) return `<div class="mat placeholder"><span class="type">${m.type}</span><h3>${m.title}</h3><p>${m.desc}</p></div>`;
+  const vid = ("video" in m) ? `<div style="margin:-18px -18px 6px">${thumb({name:m.title, video:m.video}, "exam")}</div>` : "";
+  let btns = [];
+  if(m.link) btns.push(`<a class="btn red" href="${m.link}" target="_blank" rel="noopener" data-goatcounter-click="${m.gc}">${m.cta}</a>`);
+  if(m.video && ytId(m.video.link)) btns.push(`<a class="btn line" href="https://www.youtube.com/watch?v=${ytId(m.video.link)}" target="_blank" rel="noopener" data-goatcounter-click="yt-exam-${slug(m.title)}">Watch video</a>`);
+  else if("video" in m) btns.push(`<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">Video coming soon</span>`);
+  if(!m.link) btns.push(m.file ? `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="dl-${slug(m.title)}">Download PDF</a>` : `<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">PDF coming soon</span>`);
+  const meta = m.file ? `<span>${m.version}</span><span>${fmt(m.date)}</span>${m.size ? `<span>${m.size}</span>` : ""}<span>PDF</span>` : (m.size ? `<span>${m.size}</span>` : "");
+  return `<div class="mat">${vid}<span class="type">${m.type}</span><h3>${m.title}</h3><p>${m.desc}</p>${meta ? `<div class="meta">${meta}</div>` : ""}<div class="btns">${btns.join("")}</div></div>`;
+}
+
+// act lists with search + area filter
+function setupList(key, acts, lvl){
+  const areas = ["All", ...new Set(acts.map(a=>a.area))]; let area="All";
+  $(`#f-${key}`).innerHTML = areas.map(a=>`<button type="button" aria-pressed="${a==="All"}" data-a="${a}">${a}</button>`).join("");
+  const draw = () => { const q=$(`#q-${key}`).value.trim().toLowerCase();
+    const rows = acts.filter(a=>(area==="All"||a.area===area) && (a.name + " " + (a.covers||"")).toLowerCase().includes(q));
+    $(`#list-${key}`).innerHTML = rows.length ? rows.map(a=>actCard(a,lvl)).join("") : `<div class="empty">No Act matches “${q}”. Try a shorter word, like “bank”.</div>`; };
+  $(`#f-${key}`).addEventListener("click", e => { const b=e.target.closest("button"); if(!b) return; area=b.dataset.a; $$(`#f-${key} button`).forEach(x=>x.setAttribute("aria-pressed", x===b)); draw(); });
+  $(`#q-${key}`).addEventListener("input", draw); draw();
+}
+$("#pl-cap3").href=PLAYLISTS.cap3; $("#pl-cap2").href=PLAYLISTS.cap2;
+setupList("c3", CAP3_ACTS, "cap3"); setupList("c2", CAP2_ACTS, "cap2");
+$("#exam-c3").innerHTML = CAP3_EXAM.map(examCard).join("");
+$("#exam-c2").innerHTML = CAP2_EXAM.map(examCard).join("");
+
+// tabs
+$$("[data-tabs]").forEach(tl => tl.addEventListener("click", e => { const b=e.target.closest("button"); if(!b) return; const k=tl.dataset.tabs;
+  $$(`[data-tabs="${k}"] button`).forEach(x=>x.setAttribute("aria-selected", x===b));
+  $$(`[data-panel^="${k}-"]`).forEach(p=>p.hidden = p.dataset.panel !== `${k}-${b.dataset.t}`); }));
+
+// latest uploads (automatic, newest first; only items that have a PDF)
+const LABEL = {bareEn:"Bare Act (English)", summary:"Act Summary", comp:"Suggested Answers / RTP / PEPT"};
+const files = [];
+[[CAP3_ACTS,"CAP III","#cap-iii"],[CAP2_ACTS,"CAP II","#cap-ii"]].forEach(([acts,lvl,jump]) => acts.forEach(a => Object.keys(LABEL).forEach(k => { const f=a[k]; if(f && f.file) files.push({type:`${lvl} · ${LABEL[k]}`, kind:k, lvl, jump, title:a.name, desc:"", ...f}); })));
+[[CAP3_EXAM,"CAP III"],[CAP2_EXAM,"CAP II"]].forEach(([ex,lvl]) => ex.forEach(m => { if(m.file && m.date) files.push({...m, type:`${lvl} · ${m.type}`}); }));
+files.sort((x,y)=>y.date.localeCompare(x.date));
+const latest = [], seen = new Set();
+files.forEach(m => { if(!m.kind){ latest.push(m); return; }
+  const key = m.lvl+m.kind+m.date; if(seen.has(key)) return; seen.add(key);
+  const same = files.filter(x=>x.kind===m.kind && x.lvl===m.lvl && x.date===m.date);
+  latest.push(same.length > 1 ? {...m, title:`${LABEL[m.kind]} – ${same.length} Acts`, desc:`Added for: ${same.map(x=>x.title.split(",")[0]).join(", ")}.`, group:true} : m); });
+$("#latest-files").innerHTML = latest.length ? latest.slice(0,6).map(m => m.kind
+  ? `<div class="mat"><span class="type">${m.type}</span><h3>${m.title}</h3>${m.desc ? `<p>${m.desc}</p>` : ""}<div class="meta"><span>${m.version}</span><span>${fmt(m.date)}</span><span>PDF</span></div><div class="btns">${m.group ? "" : `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="dl-latest-${slug(m.title)}">Download PDF</a>`}<a class="btn line" href="${m.jump}">Open ${m.lvl}</a></div></div>`
+  : examCard(m)).join("") : `<div class="empty">New PDFs will appear here as soon as they are uploaded.</div>`;
+
+// latest videos (automatic, newest first, from all Act videos and exam-corner videos)
+const vids = [];
+[[CAP3_ACTS,"CAP III"],[CAP2_ACTS,"CAP II"]].forEach(([acts,lvl]) => acts.forEach(a => {
+  if(a.video && ytId(a.video.link)) vids.push({name:a.name, video:a.video, lvl});
+  (a.more||[]).forEach(m => { if(ytId(m.link)) vids.push({name:m.label, video:m, lvl}); }); }));
+[[CAP3_EXAM,"CAP III"],[CAP2_EXAM,"CAP II"]].forEach(([ex,lvl]) => ex.forEach(m => { if(m.video && ytId(m.video.link)) vids.push({name:m.title, video:m.video, lvl}); }));
+vids.sort((x,y)=>(y.video.date||"").localeCompare(x.video.date||""));
+$("#latest-vids").innerHTML = vids.slice(0,4).map(a=>`<div class="vid">${thumb(a,"home")}<span>${a.name}</span><small>${a.lvl}${a.video.date?" · "+fmt(a.video.date):""}</small></div>`).join("");
+
+// routing
+const VIEWS=["home","cap-iii","cap-ii","banking","about"];
+function route(){ const v=VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):"home";
+  $$("[data-view]").forEach(el=>el.hidden=el.dataset.view!==v);
+  $$("nav a").forEach(a=>{ if(a.getAttribute("href")==="#"+v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  window.scrollTo(0,0);
+  if(window.goatcounter && goatcounter.count) goatcounter.count({path:"/"+v});
+}
+addEventListener("hashchange",route); route();
+
+document.addEventListener("click",e=>{const a=e.target.closest("[data-dl]"); if(a && !LIVE){e.preventDefault(); toast("Draft preview: the PDF downloads once the site is live.");}});
+$("#copy").addEventListener("click",()=>{const m=$("#mail").textContent; (navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).then(()=>toast("Email copied")).catch(()=>{const r=document.createRange(); r.selectNodeContents($("#mail")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast("Selected – press Ctrl+C to copy");});});
+</script>
