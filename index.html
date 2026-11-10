@@ -3,9 +3,9 @@
 <meta name="description" content="Section-wise coverage of Nepalese Acts for CA students – CAP III / CA Membership and CAP II / Application Level decks, compilations and quizzes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
-<!-- Analytics (live site only): create a free GoatCounter account, then replace YOURCODE and remove the comment marks.
-<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
--->
+<!-- Analytics: GoatCounter (govinda.goatcounter.com). Pages are recorded as cagovinda.pages.dev/<section> so they stay separate from the quiz. -->
+<script>window.goatcounter = { path: function () { return location.host + "/" + (location.hash.slice(1) || "home"); } };</script>
+<script data-goatcounter="https://govinda.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
 /* Layout: sticky top bar → hash-routed views (home, cap-iii, cap-ii, quiz, banking, about); content in a 1120px column, cards in auto-fill grids. */
 :root{
@@ -141,11 +141,11 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
 .grid-acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:14px}
 .acard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .thumb{position:relative;display:block;aspect-ratio:16/9;max-width:100%;background:var(--navy);text-decoration:none;overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}
 .thumb .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#fff;background:linear-gradient(135deg,var(--navy),#2A3E6E)}
 .thumb .ph b{font-family:var(--f-display);font-size:19px;line-height:1.2;max-width:85%}
 .thumb .ph small{font-size:12px;color:#C7CEDD;margin-top:4px}
-.thumb .play{position:absolute;right:12px;top:12px;width:46px;height:32px;border-radius:9px;background:var(--crimson);display:grid;place-items:center}
+.thumb .play{z-index:2;position:absolute;right:12px;top:12px;width:46px;height:32px;border-radius:9px;background:var(--crimson);display:grid;place-items:center}
 .thumb .play svg{width:16px;height:16px;fill:#fff}
 .thumb.none .play{background:rgba(255,255,255,.18)}
 .thumb:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
@@ -215,7 +215,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
       <p>Complete section-wise coverage of Nepal's Acts for CA students, bankers, auditors and compliance professionals. Watch the video, read the Act, revise from the summaries and question compilations.</p>
       <div class="tags"><span>Banking</span><span>Corporate</span><span>Finance</span><span>Tax</span><span>Compliance</span></div>
       <div class="btns">
-        <a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="yt-subscribe-hero"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15V9l5.8 3-5.8 3Z"/></svg>Subscribe on YouTube</a>
+        <a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="site-yt-subscribe-hero"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15V9l5.8 3-5.8 3Z"/></svg>Subscribe on YouTube</a>
         <a class="btn ghost" href="#cap-iii">CAP III / Membership</a>
         <a class="btn ghost" href="#cap-ii">CAP II / Application</a>
       </div>
@@ -224,7 +224,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
   </section>
 
   <section>
-    <div class="sec-head"><div><span class="eyebrow">Watch on YouTube</span><h2>Latest videos</h2></div><a class="btn line" href="https://www.youtube.com/@CAGovinda/videos" target="_blank" rel="noopener" data-goatcounter-click="yt-all-videos">All videos</a></div>
+    <div class="sec-head"><div><span class="eyebrow">Watch on YouTube</span><h2>Latest videos</h2></div><a class="btn line" href="https://www.youtube.com/@CAGovinda/videos" target="_blank" rel="noopener" data-goatcounter-click="site-yt-all-videos">All videos</a></div>
     <div class="vids" id="latest-vids"></div>
   </section>
 
@@ -252,7 +252,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
     <div class="band" style="margin-top:18px">
       <div class="yt"><svg viewBox="0 0 24 24"><path d="M9.8 15V9l5.8 3-5.8 3Z"/></svg></div>
       <div><h3>CAP III / CA Membership playlist</h3><p>All videos for this level in one playlist.</p></div>
-      <a class="btn red" href="#" id="pl-cap3" target="_blank" rel="noopener" data-goatcounter-click="yt-playlist-cap3">Watch on YouTube</a>
+      <a class="btn red" href="#" id="pl-cap3" target="_blank" rel="noopener" data-goatcounter-click="site-yt-playlist-cap3">Watch on YouTube</a>
     </div>
     <div class="tabs" role="tablist" data-tabs="c3">
       <button role="tab" aria-selected="true" data-t="acts">Act-wise materials</button>
@@ -278,7 +278,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
     <div class="band" style="margin-top:18px">
       <div class="yt"><svg viewBox="0 0 24 24"><path d="M9.8 15V9l5.8 3-5.8 3Z"/></svg></div>
       <div><h3>CAP II / Application Level playlist</h3><p>All videos for this level in one playlist.</p></div>
-      <a class="btn red" href="#" id="pl-cap2" target="_blank" rel="noopener" data-goatcounter-click="yt-playlist-cap2">Watch on YouTube</a>
+      <a class="btn red" href="#" id="pl-cap2" target="_blank" rel="noopener" data-goatcounter-click="site-yt-playlist-cap2">Watch on YouTube</a>
     </div>
     <div class="tabs" role="tablist" data-tabs="c2">
       <button role="tab" aria-selected="true" data-t="acts">Act-wise materials</button>
@@ -301,7 +301,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
     <span class="eyebrow">Banking Exams</span>
     <h2>Coming soon</h2>
     <p class="lead">A dedicated section for banking exams is on its way. Subscribe on YouTube to hear when it opens.</p>
-    <div class="btns" style="justify-content:center"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="yt-subscribe-banking">Subscribe on YouTube</a></div>
+    <div class="btns" style="justify-content:center"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="site-yt-subscribe-banking">Subscribe on YouTube</a></div>
   </section>
 </div>
 
@@ -318,7 +318,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
         <li>English translations of Nepali Acts with amendment notes</li>
         <li>ICAN suggested answers, RTPs and PEPTs compiled topic-wise</li>
       </ul>
-      <div class="btns" style="margin-top:16px"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="yt-subscribe-about">Subscribe on YouTube</a></div>
+      <div class="btns" style="margin-top:16px"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="site-yt-subscribe-about">Subscribe on YouTube</a></div>
       <h3 style="margin-top:20px">Notes and queries</h3>
       <div class="contact"><code id="mail">govintamang2054@gmail.com</code><button class="btn line" id="copy" type="button">Copy email</button></div>
     </div>
@@ -345,11 +345,11 @@ const PLAY = '<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z
 function thumb(a, tag, title){
   const v = a.video, id = ytId(v && (v.link || v)); title = title || a.name;
   if(!id) return `<div class="thumb none"><div class="ph"><b>${title}</b><small>${a.soon ? "Coming soon" : "Video coming soon"}</small></div>${PLAY}</div>`;
-  return `<a class="thumb" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" data-goatcounter-click="yt-${tag}-${slug(title)}">
+  return `<a class="thumb" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" data-goatcounter-click="site-yt-${tag}-${slug(title)}">
     <div class="ph"><b>${title}</b><small>Watch on YouTube</small></div>
     <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Video: ${title}" loading="lazy" onerror="this.remove()">${PLAY}</a>`;
 }
-const fileBtn = (f, tag) => f && f.file ? `<a class="mbtn" href="${f.file}" download data-dl data-goatcounter-click="${tag}">PDF</a>` : `<span class="mbtn off">Coming soon</span>`;
+const fileBtn = (f, tag) => f && f.file ? `<a class="mbtn" href="${f.file}" download data-dl data-goatcounter-click="site-${tag}">PDF</a>` : `<span class="mbtn off">Coming soon</span>`;
 function row(label, sub, f, tag){
   const meta = f && f.file ? `<span class="mt">${f.version} · ${fmt(f.date)}</span>` : `<small>${sub}</small>`;
   return `<div class="mrow"><div class="l"><b>${label}</b>${meta}</div>${fileBtn(f, tag)}</div>`;
@@ -357,11 +357,11 @@ function row(label, sub, f, tag){
 function npRows(np, tag){
   const list = !np ? [] : Array.isArray(np) ? np : [np];
   if(!list.length) return `<div class="mrow"><div class="l"><b>Bare Act (Nepali)</b><small>Official – Nepal Law Commission</small></div><span class="mbtn off">Link coming soon</span></div>`;
-  return list.map((x,i) => `<div class="mrow"><div class="l"><b>${list.length > 1 ? (x.label || "Bare Act (Nepali)") : "Bare Act (Nepali)"}</b><small>Official – ${/mof\.gov/.test(x.link) ? "Ministry of Finance" : "Nepal Law Commission"}</small></div><a class="mbtn" href="${x.link}" target="_blank" rel="noopener" data-goatcounter-click="${tag}-${i}">Open</a></div>`).join("");
+  return list.map((x,i) => `<div class="mrow"><div class="l"><b>${list.length > 1 ? (x.label || "Bare Act (Nepali)") : "Bare Act (Nepali)"}</b><small>Official – ${/mof\.gov/.test(x.link) ? "Ministry of Finance" : "Nepal Law Commission"}</small></div><a class="mbtn" href="${x.link}" target="_blank" rel="noopener" data-goatcounter-click="site-${tag}-${i}">Open</a></div>`).join("");
 }
 function actCard(a, lvl){
   const s = slug(a.name);
-  const more = (a.more || []).filter(m=>ytId(m.link)).map(m => `<a class="also" href="https://www.youtube.com/watch?v=${ytId(m.link)}" target="_blank" rel="noopener" data-goatcounter-click="yt-${lvl}-${slug(m.label)}">▶ Also watch: ${m.label}${m.date ? " · " + fmt(m.date) : ""}</a>`).join("");
+  const more = (a.more || []).filter(m=>ytId(m.link)).map(m => `<a class="also" href="https://www.youtube.com/watch?v=${ytId(m.link)}" target="_blank" rel="noopener" data-goatcounter-click="site-yt-${lvl}-${slug(m.label)}">▶ Also watch: ${m.label}${m.date ? " · " + fmt(m.date) : ""}</a>`).join("");
   return `<article class="acard">${thumb(a,lvl)}<div class="abody"><span class="tagarea">${a.area}</span><h3>${a.name}</h3>${a.covers ? `<p class="covers">${a.covers}</p>` : ""}${more}<div>
     ${npRows(a.bareNp, `np-${lvl}-${s}`)}
     ${row("Bare Act (English)","Unofficial translation",a.bareEn,`en-${lvl}-${s}`)}
@@ -373,10 +373,10 @@ function examCard(m){
   if(m.placeholder) return `<div class="mat placeholder"><span class="type">${m.type}</span><h3>${m.title}</h3><p>${m.desc}</p></div>`;
   const vid = ("video" in m) ? `<div style="margin:-18px -18px 6px">${thumb({name:m.title, video:m.video}, "exam")}</div>` : "";
   let btns = [];
-  if(m.link) btns.push(`<a class="btn red" href="${m.link}" target="_blank" rel="noopener" data-goatcounter-click="${m.gc}">${m.cta}</a>`);
-  if(m.video && ytId(m.video.link)) btns.push(`<a class="btn line" href="https://www.youtube.com/watch?v=${ytId(m.video.link)}" target="_blank" rel="noopener" data-goatcounter-click="yt-exam-${slug(m.title)}">Watch video</a>`);
+  if(m.link) btns.push(`<a class="btn red" href="${m.link}" target="_blank" rel="noopener" data-goatcounter-click="site-${m.gc}">${m.cta}</a>`);
+  if(m.video && ytId(m.video.link)) btns.push(`<a class="btn line" href="https://www.youtube.com/watch?v=${ytId(m.video.link)}" target="_blank" rel="noopener" data-goatcounter-click="site-yt-exam-${slug(m.title)}">Watch video</a>`);
   else if("video" in m) btns.push(`<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">Video coming soon</span>`);
-  if(!m.link) btns.push(m.file ? `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="dl-${slug(m.title)}">Download PDF</a>` : `<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">PDF coming soon</span>`);
+  if(!m.link) btns.push(m.file ? `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="site-dl-${slug(m.title)}">Download PDF</a>` : `<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">PDF coming soon</span>`);
   const meta = m.file ? `<span>${m.version}</span><span>${fmt(m.date)}</span>${m.size ? `<span>${m.size}</span>` : ""}<span>PDF</span>` : (m.size ? `<span>${m.size}</span>` : "");
   return `<div class="mat">${vid}<span class="type">${m.type}</span><h3>${m.title}</h3><p>${m.desc}</p>${meta ? `<div class="meta">${meta}</div>` : ""}<div class="btns">${btns.join("")}</div></div>`;
 }
@@ -413,7 +413,7 @@ files.forEach(m => { if(!m.kind){ latest.push(m); return; }
   const same = files.filter(x=>x.kind===m.kind && x.lvl===m.lvl && x.date===m.date);
   latest.push(same.length > 1 ? {...m, title:`${LABEL[m.kind]} – ${same.length} Acts`, desc:`Added for: ${same.map(x=>x.title.split(",")[0]).join(", ")}.`, group:true} : m); });
 $("#latest-files").innerHTML = latest.length ? latest.slice(0,6).map(m => m.kind
-  ? `<div class="mat"><span class="type">${m.type}</span><h3>${m.title}</h3>${m.desc ? `<p>${m.desc}</p>` : ""}<div class="meta"><span>${m.version}</span><span>${fmt(m.date)}</span><span>PDF</span></div><div class="btns">${m.group ? "" : `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="dl-latest-${slug(m.title)}">Download PDF</a>`}<a class="btn line" href="${m.jump}">Open ${m.lvl}</a></div></div>`
+  ? `<div class="mat"><span class="type">${m.type}</span><h3>${m.title}</h3>${m.desc ? `<p>${m.desc}</p>` : ""}<div class="meta"><span>${m.version}</span><span>${fmt(m.date)}</span><span>PDF</span></div><div class="btns">${m.group ? "" : `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="site-dl-latest-${slug(m.title)}">Download PDF</a>`}<a class="btn line" href="${m.jump}">Open ${m.lvl}</a></div></div>`
   : examCard(m)).join("") : `<div class="empty">New PDFs will appear here as soon as they are uploaded.</div>`;
 
 // latest videos (automatic, newest first, from all Act videos and exam-corner videos)
@@ -431,7 +431,8 @@ function route(){ const v=VIEWS.includes(location.hash.slice(1))?location.hash.s
   $$("[data-view]").forEach(el=>el.hidden=el.dataset.view!==v);
   $$("nav a").forEach(a=>{ if(a.getAttribute("href")==="#"+v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   window.scrollTo(0,0);
-  if(window.goatcounter && goatcounter.count) goatcounter.count({path:"/"+v});
+  if(route.done && window.goatcounter && goatcounter.count) goatcounter.count({path: location.host + "/" + v});
+  route.done = true;
 }
 addEventListener("hashchange",route); route();
 
