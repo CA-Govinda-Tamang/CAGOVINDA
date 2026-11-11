@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>CA Govinda Tamang</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Section-wise coverage of Nepalese Acts for CA students – CAP III / CA Membership and CAP II / Application Level decks, compilations and quizzes.">
@@ -312,12 +313,18 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
     <div class="card">
       <span class="eyebrow">About</span>
       <h2>CA Govinda Tamang</h2>
-      <p class="lead">Chartered Accountant, member of ICAN and ICAI, working in internal audit. This channel gives students and professionals a complete, section-wise walk-through of Nepal's Acts, updated for the latest amendments.</p>
+      <p class="lead">Chartered Accountant: qualified with ICAI in November 2018, and passed ICAN's CA Membership Examination in September 2024. I work as an internal auditor in an export-oriented manufacturing company and have over seven years of post-qualification experience in internal audit.</p>
+      <h3 style="margin-top:20px">Why I started this</h3>
+      <p>While preparing for the CA Membership Examination, I found very little study material online, especially for law. Even English translations of the Acts with their latest amendments were hard to find, and most of what was available sat behind paywalls.</p>
+      <p>This site is my attempt to make Nepal's laws accessible: free, section-wise and up to date with the latest amendments. It is for anyone who needs to understand Nepal's laws: CA students, ICAI members completing the membership examination in Nepal, banking and finance professionals, and anyone who deals with Nepali law in their work.</p>
+      <h3 style="margin-top:20px">What you will find here</h3>
       <ul>
         <li>Section-wise videos on Nepal's Acts on YouTube</li>
         <li>English translations of Nepali Acts with amendment notes</li>
+        <li>Act summaries</li>
         <li>ICAN suggested answers, RTPs and PEPTs compiled topic-wise</li>
       </ul>
+      <p>The site covers both CAP II / Application Level and CAP III / CA Membership Course. Next, I plan to cover the laws in the professional banking examinations.</p>
       <div class="btns" style="margin-top:16px"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="site-yt-subscribe-about">Subscribe on YouTube</a></div>
       <h3 style="margin-top:20px">Notes and queries</h3>
       <div class="contact"><code id="mail">govintamang2054@gmail.com</code><button class="btn line" id="copy" type="button">Copy email</button></div>
@@ -326,7 +333,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
 </div>
 </main>
 
-<footer><div class="wrap"><span>© 2026 CA Govinda Tamang. Free for personal study; please link back instead of re-uploading.</span><span>Amendments covered up to 31 August 2026</span></div></footer>
+<footer><div class="wrap"><span>© 2026 CA Govinda Tamang. Free for personal study.</span></div></footer>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script src="materials.js"></script>
@@ -351,6 +358,7 @@ function thumb(a, tag, title){
 }
 const fileBtn = (f, tag) => f && f.file ? `<a class="mbtn" href="${f.file}" download data-dl data-goatcounter-click="site-${tag}">PDF</a>` : `<span class="mbtn off">Coming soon</span>`;
 function row(label, sub, f, tag){
+  if(Array.isArray(f)) return f.length ? f.map((x,i) => row(`${label} – ${x.label}`, sub, x, `${tag}-${i}`)).join("") : row(label, sub, null, tag);
   const meta = f && f.file ? `<span class="mt">${f.version} · ${fmt(f.date)}</span>` : `<small>${sub}</small>`;
   return `<div class="mrow"><div class="l"><b>${label}</b>${meta}</div>${fileBtn(f, tag)}</div>`;
 }
@@ -404,14 +412,14 @@ $$("[data-tabs]").forEach(tl => tl.addEventListener("click", e => { const b=e.ta
 // latest uploads (automatic, newest first; only items that have a PDF)
 const LABEL = {bareEn:"Bare Act (English)", summary:"Act Summary", comp:"Suggested Answers / RTP / PEPT"};
 const files = [];
-[[CAP3_ACTS,"CAP III","#cap-iii"],[CAP2_ACTS,"CAP II","#cap-ii"]].forEach(([acts,lvl,jump]) => acts.forEach(a => Object.keys(LABEL).forEach(k => { const f=a[k]; if(f && f.file) files.push({type:`${lvl} · ${LABEL[k]}`, kind:k, lvl, jump, title:a.name, desc:"", ...f}); })));
+[[CAP3_ACTS,"CAP III","#cap-iii"],[CAP2_ACTS,"CAP II","#cap-ii"]].forEach(([acts,lvl,jump]) => acts.forEach(a => Object.keys(LABEL).forEach(k => [].concat(a[k] || []).forEach(f => { if(f && f.file) files.push({type:`${lvl} · ${LABEL[k]}`, kind:k, lvl, jump, title:f.label || a.name, desc:"", ...f}); }))));
 [[CAP3_EXAM,"CAP III"],[CAP2_EXAM,"CAP II"]].forEach(([ex,lvl]) => ex.forEach(m => { if(m.file && m.date) files.push({...m, type:`${lvl} · ${m.type}`}); }));
 files.sort((x,y)=>y.date.localeCompare(x.date));
 const latest = [], seen = new Set();
 files.forEach(m => { if(!m.kind){ latest.push(m); return; }
   const key = m.lvl+m.kind+m.date; if(seen.has(key)) return; seen.add(key);
   const same = files.filter(x=>x.kind===m.kind && x.lvl===m.lvl && x.date===m.date);
-  latest.push(same.length > 1 ? {...m, title:`${LABEL[m.kind]} – ${same.length} Acts`, desc:`Added for: ${same.map(x=>x.title.split(",")[0]).join(", ")}.`, group:true} : m); });
+  latest.push(same.length > 1 ? {...m, title:`${LABEL[m.kind]} – ${same.length} PDFs`, desc:`Added for: ${same.map(x=>x.title.split(",")[0]).join(", ")}.`, group:true} : m); });
 $("#latest-files").innerHTML = latest.length ? latest.slice(0,6).map(m => m.kind
   ? `<div class="mat"><span class="type">${m.type}</span><h3>${m.title}</h3>${m.desc ? `<p>${m.desc}</p>` : ""}<div class="meta"><span>${m.version}</span><span>${fmt(m.date)}</span><span>PDF</span></div><div class="btns">${m.group ? "" : `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="site-dl-latest-${slug(m.title)}">Download PDF</a>`}<a class="btn line" href="${m.jump}">Open ${m.lvl}</a></div></div>`
   : examCard(m)).join("") : `<div class="empty">New PDFs will appear here as soon as they are uploaded.</div>`;
