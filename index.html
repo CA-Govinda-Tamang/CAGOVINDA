@@ -8,7 +8,7 @@
 <script>window.goatcounter = { path: function () { return location.host + "/" + (location.hash.slice(1) || "home"); } };</script>
 <script data-goatcounter="https://govinda.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
-/* Layout: sticky top bar → hash-routed views (home, cap-iii, cap-ii, quiz, banking, about); content in a 1120px column, cards in auto-fill grids. */
+/* Layout: sticky top bar → hash-routed views (home, cap-iii, cap-ii, banking, about); content in a 1120px column, cards in auto-fill grids. */
 :root{
   --bg:#F6F7FA; --surface:#FFFFFF; --ink:#18213A; --muted:#5B6478; --line:#DDE2EB;
   --navy:#14213D; --crimson:#B3122E; --crimson-soft:#F8E3E7; --gold:#B8862B; --ok:#2E7D4F;
@@ -239,7 +239,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
     <div class="tracks">
       <a class="track" href="#cap-iii"><span class="k">ICAN · Paper 4 · Corporate Laws</span><h3>CAP III / CA Membership</h3><p>Act-wise materials and an exam corner with master revision and penalties decks.</p><span class="go">Open section →</span></a>
       <a class="track" href="#cap-ii"><span class="k">ICAN · Paper 3 · Applied Law</span><h3>CAP II / Application Level</h3><p>Act-wise materials and an exam corner with the MCQ practice quiz.</p><span class="go">Open section →</span></a>
-      <a class="track" href="#banking"><span class="k">NRB · Banks · Financial institutions</span><h3>Banking Exams <span class="soon">Coming soon</span></h3><p>A dedicated section for banking exams.</p><span class="go">Take a look →</span></a>
+      <a class="track" href="#banking"><span class="k">NRB · Banks · Financial institutions</span><h3>Banking Exams</h3><p>Act-wise materials on NRB, BFI, banking offence, anti-money laundering and payment laws.</p><span class="go">Open section →</span></a>
     </div>
   </section>
 </div>
@@ -298,11 +298,15 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
 
 <!-- BANKING -->
 <div data-view="banking" hidden>
-  <section class="soonpage">
+  <section>
     <span class="eyebrow">Banking Exams</span>
-    <h2>Coming soon</h2>
-    <p class="lead">A dedicated section for banking exams is on its way. Subscribe on YouTube to hear when it opens.</p>
-    <div class="btns" style="justify-content:center"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="site-yt-subscribe-banking">Subscribe on YouTube</a></div>
+    <h2>Banking Laws</h2>
+    <p class="lead">Act-wise materials for banking and financial-sector exams. Each Act has its video, the official Nepali text, an English translation and a summary. Every file shows its version and upload date.</p>
+    <div class="tools" style="margin-top:18px">
+      <input class="search" id="q-bk" type="search" placeholder="Search an Act, e.g. NRB, Payment" aria-label="Search Banking Acts">
+      <div class="filters" id="f-bk" role="group" aria-label="Filter by area"></div>
+    </div>
+    <div class="grid-acts" id="list-bk"></div>
   </section>
 </div>
 
@@ -324,7 +328,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
         <li>Act summaries</li>
         <li>ICAN suggested answers, RTPs and PEPTs compiled topic-wise</li>
       </ul>
-      <p>The site covers both CAP II / Application Level and CAP III / CA Membership Course. Next, I plan to cover the laws in the professional banking examinations.</p>
+      <p>The site covers CAP II / Application Level and CAP III / CA Membership Course, and a Banking Exams section for the laws asked in professional banking examinations.</p>
       <div class="btns" style="margin-top:16px"><a class="btn red" href="https://www.youtube.com/@CAGovinda?sub_confirmation=1" target="_blank" rel="noopener" data-goatcounter-click="site-yt-subscribe-about">Subscribe on YouTube</a></div>
       <h3 style="margin-top:20px">Notes and queries</h3>
       <div class="contact"><code id="mail">govintamang2054@gmail.com</code><button class="btn line" id="copy" type="button">Copy email</button></div>
@@ -339,6 +343,11 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:1
 <script src="materials.js"></script>
 <script>
 const {CAP3_ACTS, CAP3_EXAM, CAP2_ACTS, CAP2_EXAM, PLAYLISTS} = window;
+// Banking cards marked with "from" reuse the CAP III card of that name (video, Nepali link, English, summary) – no compilation.
+const BANK_ACTS = (window.BANK_ACTS || []).map(b => { if(!b.from) return b;
+  const src = CAP3_ACTS.find(a => a.name === b.from);
+  if(!src) return {name:b.from, area:b.area, soon:true, video:null, bareNp:null, bareEn:null, summary:null};
+  const {comp, ...rest} = src; return {...rest, area: b.area || src.area}; });
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const LIVE = !/claude/.test(location.hostname);
@@ -372,9 +381,9 @@ function actCard(a, lvl){
   const more = (a.more || []).filter(m=>ytId(m.link)).map(m => `<a class="also" href="https://www.youtube.com/watch?v=${ytId(m.link)}" target="_blank" rel="noopener" data-goatcounter-click="site-yt-${lvl}-${slug(m.label)}">▶ Also watch: ${m.label}${m.date ? " · " + fmt(m.date) : ""}</a>`).join("");
   return `<article class="acard">${thumb(a,lvl)}<div class="abody"><span class="tagarea">${a.area}</span><h3>${a.name}</h3>${a.covers ? `<p class="covers">${a.covers}</p>` : ""}${more}<div>
     ${npRows(a.bareNp, `np-${lvl}-${s}`)}
-    ${row("Bare Act (English)","Unofficial translation",a.bareEn,`en-${lvl}-${s}`)}
+    ${row("Bare Act (English) (Unofficial Translation)","English translation of the Nepali text",a.bareEn,`en-${lvl}-${s}`)}
     ${row("Act Summary","Section-wise summary deck",a.summary,`sum-${lvl}-${s}`)}
-    ${row("Suggested Answers / RTP / PEPT","Topic-wise compilation",a.comp,`comp-${lvl}-${s}`)}
+    ${"comp" in a ? row("Suggested Answers / RTP / PEPT","Topic-wise compilation",a.comp,`comp-${lvl}-${s}`) : ""}
   </div></div></article>`;
 }
 function examCard(m){
@@ -384,9 +393,10 @@ function examCard(m){
   if(m.link) btns.push(`<a class="btn red" href="${m.link}" target="_blank" rel="noopener" data-goatcounter-click="site-${m.gc}">${m.cta}</a>`);
   if(m.video && ytId(m.video.link)) btns.push(`<a class="btn line" href="https://www.youtube.com/watch?v=${ytId(m.video.link)}" target="_blank" rel="noopener" data-goatcounter-click="site-yt-exam-${slug(m.title)}">Watch video</a>`);
   else if("video" in m) btns.push(`<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">Video coming soon</span>`);
-  if(!m.link) btns.push(m.file ? `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="site-dl-${slug(m.title)}">Download PDF</a>` : `<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">PDF coming soon</span>`);
+  if(!m.link && !m.files) btns.push(m.file ? `<a class="btn dl" href="${m.file}" download data-dl data-goatcounter-click="site-dl-${slug(m.title)}">Download PDF</a>` : `<span class="btn line" style="cursor:default;color:var(--muted);border-style:dashed">PDF coming soon</span>`);
   const meta = m.file ? `<span>${m.version}</span><span>${fmt(m.date)}</span>${m.size ? `<span>${m.size}</span>` : ""}<span>PDF</span>` : (m.size ? `<span>${m.size}</span>` : "");
-  return `<div class="mat">${vid}<span class="type">${m.type}</span><h3>${m.title}</h3><p>${m.desc}</p>${meta ? `<div class="meta">${meta}</div>` : ""}<div class="btns">${btns.join("")}</div></div>`;
+  const many = m.files ? `<div>${m.files.map((f,i) => row(f.label, "PDF coming soon", f, `dl-${slug(m.title)}-${i}`)).join("")}</div>` : "";
+  return `<div class="mat">${vid}<span class="type">${m.type}</span><h3>${m.title}</h3><p>${m.desc}</p>${meta ? `<div class="meta">${meta}</div>` : ""}${many}<div class="btns">${btns.join("")}</div></div>`;
 }
 
 // act lists with search + area filter
@@ -400,7 +410,7 @@ function setupList(key, acts, lvl){
   $(`#q-${key}`).addEventListener("input", draw); draw();
 }
 $("#pl-cap3").href=PLAYLISTS.cap3; $("#pl-cap2").href=PLAYLISTS.cap2;
-setupList("c3", CAP3_ACTS, "cap3"); setupList("c2", CAP2_ACTS, "cap2");
+setupList("c3", CAP3_ACTS, "cap3"); setupList("c2", CAP2_ACTS, "cap2"); setupList("bk", BANK_ACTS, "bank");
 $("#exam-c3").innerHTML = CAP3_EXAM.map(examCard).join("");
 $("#exam-c2").innerHTML = CAP2_EXAM.map(examCard).join("");
 
@@ -410,10 +420,12 @@ $$("[data-tabs]").forEach(tl => tl.addEventListener("click", e => { const b=e.ta
   $$(`[data-panel^="${k}-"]`).forEach(p=>p.hidden = p.dataset.panel !== `${k}-${b.dataset.t}`); }));
 
 // latest uploads (automatic, newest first; only items that have a PDF)
-const LABEL = {bareEn:"Bare Act (English)", summary:"Act Summary", comp:"Suggested Answers / RTP / PEPT"};
+const LABEL = {bareEn:"Bare Act (English) (Unofficial Translation)", summary:"Act Summary", comp:"Suggested Answers / RTP / PEPT"};
 const files = [];
 [[CAP3_ACTS,"CAP III","#cap-iii"],[CAP2_ACTS,"CAP II","#cap-ii"]].forEach(([acts,lvl,jump]) => acts.forEach(a => Object.keys(LABEL).forEach(k => [].concat(a[k] || []).forEach(f => { if(f && f.file) files.push({type:`${lvl} · ${LABEL[k]}`, kind:k, lvl, jump, title:f.label || a.name, desc:"", ...f}); }))));
-[[CAP3_EXAM,"CAP III"],[CAP2_EXAM,"CAP II"]].forEach(([ex,lvl]) => ex.forEach(m => { if(m.file && m.date) files.push({...m, type:`${lvl} · ${m.type}`}); }));
+[[CAP3_EXAM,"CAP III","#cap-iii"],[CAP2_EXAM,"CAP II","#cap-ii"]].forEach(([ex,lvl,jump]) => ex.forEach(m => {
+  if(m.file && m.date) files.push({...m, type:`${lvl} · ${m.type}`});
+  (m.files || []).forEach((f,i) => { if(f.file && f.date) files.push({type:`${lvl} · ${m.type}`, kind:`exam-${i}-${slug(m.title)}`, lvl, jump, title:`${m.title} – ${f.label}`, desc:"", ...f}); }); }));
 files.sort((x,y)=>y.date.localeCompare(x.date));
 const latest = [], seen = new Set();
 files.forEach(m => { if(!m.kind){ latest.push(m); return; }

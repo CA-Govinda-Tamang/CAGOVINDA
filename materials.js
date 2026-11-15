@@ -20,6 +20,11 @@
    - bareNp: { link: "<Law Commission page>" }  – or several links:
        [ { label: "Act, 2053", link: "..." }, { label: "Regulations, 2061", link: "..." } ]
    - more: extra videos for the same Act, shown as "Also watch".
+   - Exam corner with several PDFs on one card:
+       files: [ { label: "...", file: "files/cap3/exam/X.pdf", version: "v1.0", date: "YYYY-MM-DD" }, ... ]
+   - Banking: { from: "<exact CAP III Act name>", area: "..." } copies that CAP III
+     card (video, Nepali link, English, summary). Update the CAP III card and the
+     Banking card updates by itself. Compilations are not shown in Banking.
    ===================================================================== */
 
 // ------------------------- CAP III / CA Membership -------------------------
@@ -32,7 +37,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://www.lawcommission.gov.np/content/12157/12157-company-act-2063/" },
     bareEn:  { file: "files/cap3/english/Companies_Act_2063_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/Companies_Act_2063_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Companies_Act_2063_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Banks and Financial Institutions Act, 2073",
@@ -41,7 +46,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12214/12214-bank-and-financial-institution/" },
     bareEn:  { file: "files/cap3/english/BAFIA_2073_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/BAFIA_2073_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/BAFIA_2073_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Nepal Rastra Bank Act, 2058",
@@ -50,7 +55,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12211/12211-nepal-rastra-bank-act-2058/" },
     bareEn:  { file: "files/cap3/english/NRB_Act_2058_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/NRB_Act_2058_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/NRB_Act_2058_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Insurance Act, 2079",
@@ -59,7 +64,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12233/12233-insurance-act-2079/" },
     bareEn:  { file: "files/cap3/english/Insurance_Act_2079_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/Insurance_Act_2079_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Insurance_Act_2079_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Nepal Chartered Accountants Act, 2053 & Regulations, 2061",
@@ -74,7 +79,7 @@ window.CAP3_ACTS = [
       { label: "CA Regulations, 2061", file: "files/cap3/english/CA_Regulations_2061_English.pdf", version: "v1.0", date: "2026-11-11" }
     ],
     summary: { file: "files/cap3/summary/NCA_Act_2053_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/NCA_Act_2053_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Securities Act, 2063",
@@ -83,7 +88,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12228/12228-securities-act-2063/" },
     bareEn:  { file: "files/cap3/english/Securities_Act_2063_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: null,
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Securities_Act_2063_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Industrial Enterprises Act, 2076",
@@ -92,7 +97,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12174/12174-industrial-business-act-2076/" },
     bareEn:  { file: "files/cap3/english/Industrial_Enterprises_Act_2076_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/Industrial_Enterprises_Act_2076_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Industrial_Enterprises_Act_2076_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Labour Act, 2074",
@@ -101,7 +106,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/13309/labor-act--2017/" },
     bareEn:  { file: "files/cap3/english/Labour_Act_2074_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/Labour_Act_2074_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Labour_Act_2074_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Cooperatives Act, 2074",
@@ -110,7 +115,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12756/12756-cooperatives-act-2017/" },
     bareEn:  { file: "files/cap3/english/Cooperatives_Act_2074_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: null,
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Cooperatives_Act_2074_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Foreign Exchange (Regulation) Act, 2019",
@@ -119,7 +124,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12208/12208-foreign-exchange-regulation/" },
     bareEn:  { file: "files/cap3/english/FERA_2019_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/FERA_2019_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/FERA_2019_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Foreign Investment and Technology Transfer Act, 2075",
@@ -128,7 +133,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12171/12171-the-foreign-investment-and-tec/" },
     bareEn:  { file: "files/cap3/english/FITTA_2075_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/FITTA_2075_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/FITTA_2075_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "International Financial Transactions Act, 2054",
@@ -137,7 +142,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12226/12226-international-financial-transa/" },
     bareEn:  { file: "files/cap3/english/IFT_Act_2054_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/IFT_Act_2054_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/IFT_Act_2054_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Audit Act, 2075",
@@ -146,7 +151,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12885/12885-the-audit-act-2019/" },
     bareEn:  { file: "files/cap3/english/Audit_Act_2075_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/Audit_Act_2075_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Audit_Act_2075_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Insolvency Act, 2063",
@@ -155,7 +160,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12158/12158-damashahi-act-2063/" },
     bareEn:  { file: "files/cap3/english/Insolvency_Act_2063_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: null,
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Insolvency_Act_2063_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Money Laundering Prevention Act, 2064",
@@ -164,7 +169,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12229/12229-money-laundering-prevention-ac/" },
     bareEn:  { file: "files/cap3/english/AML_Act_2064_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/AML_Act_2064_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/AML_Act_2064_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Public Procurement Act, 2063",
@@ -178,7 +183,7 @@ window.CAP3_ACTS = [
       { label: "Act, 2063", file: "files/cap3/summary/Public_Procurement_Act_2063_Summary.pdf", version: "v1.0", date: "2026-11-11" },
       { label: "Second Amendment, 2083", file: "files/cap3/summary/Public_Procurement_Act_2063_2nd_Amendment_2083_Summary.pdf", version: "v1.0", date: "2026-11-11" }
     ],
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Public_Procurement_Act_2063_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Financial Intermediary Societies Act, 2055",
@@ -187,7 +192,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12210/12210-financial-intermediation-insti/" },
     bareEn:  { file: "files/cap3/english/FIS_Act_2055_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/FIS_Act_2055_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/FIS_Act_2055_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Banking Offence and Punishment Act, 2064",
@@ -196,7 +201,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/12213/12213-banking-offenses-and-punishmen/" },
     bareEn:  { file: "files/cap3/english/BOAP_Act_2064_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/BOAP_2064_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/BOAP_Act_2064_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   },
   {
     name:    "Arbitration Act, 2055",
@@ -205,7 +210,7 @@ window.CAP3_ACTS = [
     bareNp:  { link: "https://lawcommission.gov.np/content/13367/arbitration-act--2055/" },
     bareEn:  { file: "files/cap3/english/Arbitration_Act_2055_English.pdf", version: "v1.0", date: "2026-11-11" },
     summary: { file: "files/cap3/summary/Arbitration_Act_2055_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    null
+    comp:    { file: "files/cap3/compilation/Arbitration_Act_2055_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
   }
 ];
 
@@ -214,7 +219,11 @@ window.CAP3_ACTS = [
 window.CAP3_EXAM = [
   { type: "Master revision", title: "Last Minute Revision – All 19 Acts",
     desc: "Every section asked in Exam, RTP and PEPT, with frequency badges, Top 10 per Act and memory tricks.",
-    file: null, version: "v1.0", date: null, video: null },
+    video: { link: "https://youtu.be/N4Pu4c9g59M", date: "2026-11-15" },
+    files: [
+      { label: "Summary deck (slides used in the video)", file: "files/cap3/exam/Last_Minute_Revision_All_19_Acts_Summary.pdf", version: "v1.0", date: "2026-11-15" },
+      { label: "Compilation with detailed suggested answers", file: "files/cap3/exam/Last_Minute_Revision_All_19_Acts_Suggested_Answers.pdf", version: "v1.0", date: "2026-11-15" }
+    ] },
   { type: "Punishments and penalties", title: "Punishments and Penalties – All 19 Acts",
     desc: "Offences, fines, imprisonment, regulators' fines and appeal rules from the latest Nepali texts.",
     file: null, version: "v1.0", date: null, video: null },
@@ -318,10 +327,10 @@ window.CAP2_ACTS = [
     ],
     bareEn:  [
       { label: "Labour Act, 2074", file: "files/cap2/english/Labour_Act_2074_English.pdf", version: "v1.0", date: "2026-11-11" },
-      { label: "Contribution-based Social Security Act, 2074", file: null },
-      { label: "Employee Provident Fund Act, 2019", file: null },
-      { label: "Citizens Investment Trust Act, 2047", file: null },
-      { label: "Bonus Act, 2030", file: null }
+      { label: "Contribution-based Social Security Act, 2074", file: "files/cap2/english/Social_Security_Act_2074_English.pdf", version: "v1.0", date: "2026-11-15" },
+      { label: "Employee Provident Fund Act, 2019", file: "files/cap2/english/EPF_Act_2019_English.pdf", version: "v1.0", date: "2026-11-15" },
+      { label: "Citizens Investment Trust Act, 2047", file: "files/cap2/english/CIT_Act_2047_English.pdf", version: "v1.0", date: "2026-11-15" },
+      { label: "Bonus Act, 2030", file: "files/cap2/english/Bonus_Act_2030_English.pdf", version: "v1.0", date: "2026-11-15" }
     ],
     summary: null,
     comp:    null
@@ -332,7 +341,7 @@ window.CAP2_ACTS = [
     covers:  "Contracts and other liabilities",
     video:   { link: "https://youtu.be/nJIdXfJBNRw", date: "2026-10-03" },
     bareNp:  { link: "https://lawcommission.gov.np/content/13455/civil-code-2074/" },
-    bareEn:  null,
+    bareEn:  { file: "files/cap2/english/Civil_Code_2074_Part_V_English.pdf", version: "v1.0", date: "2026-11-15" },
     summary: { file: "files/cap2/summary/Civil_Code_2074_Part_V_Summary.pdf", version: "v1.0", date: "2026-11-11" },
     comp:    null
   },
@@ -345,7 +354,10 @@ window.CAP2_ACTS = [
       { label: "Associations Registration Act, 2034", link: "https://lawcommission.gov.np/content/12249/12249-association-registration-act/" },
       { label: "Social Welfare Act, 2049", link: "https://www.lawcommission.gov.np/content/12907/social-welfare-act--2049/" }
     ],
-    bareEn:  null,
+    bareEn:  [
+      { label: "Associations Registration Act, 2034", file: "files/cap2/english/Associations_Registration_Act_2034_English.pdf", version: "v1.0", date: "2026-11-15" },
+      { label: "Social Welfare Act, 2049", file: "files/cap2/english/Social_Welfare_Act_2049_English.pdf", version: "v1.0", date: "2026-11-15" }
+    ],
     summary: { file: "files/cap2/summary/Social_Organizations_Acts_Summary.pdf", version: "v1.0", date: "2026-11-11" },
     comp:    null
   },
@@ -355,7 +367,7 @@ window.CAP2_ACTS = [
     soon:    true,
     video:   null,
     bareNp:  { link: "https://lawcommission.gov.np/content/12891/12891-public-procurement-act-2063/" },
-    bareEn:  null,
+    bareEn:  { file: "files/cap3/english/Public_Procurement_Act_2063_English.pdf", version: "v1.0", date: "2026-11-11" },   // same file as CAP III
     summary: null,
     comp:    null
   }
@@ -368,6 +380,52 @@ window.CAP2_EXAM = [
     link: "https://application-level-mcq-ican.netlify.app/", cta: "Start quiz", gc: "quiz-open", size: "Free · no sign-up",
     video: { link: "https://youtu.be/61yngLq0hS8", date: "2026-11-07" } },
   { placeholder: true, type: "Next series", title: "Coming soon", desc: "Revision decks and new series for Application Level will appear here." }
+];
+
+// ------------------------------ Banking Exams ------------------------------
+// "from" = copy the CAP III card with exactly this name (video, Nepali link, English, summary).
+// New Acts: same fields as other cards, but no "comp" line (no compilation in Banking).
+window.BANK_ACTS = [
+  { from: "Nepal Rastra Bank Act, 2058",                 area: "Banking" },
+  { from: "Banks and Financial Institutions Act, 2073",  area: "Banking" },
+  { from: "Money Laundering Prevention Act, 2064",       area: "Compliance" },
+  { from: "Banking Offence and Punishment Act, 2064",    area: "Banking" },
+  {
+    name:    "Electronic Transactions Act, 2063",
+    area:    "Payments & Instruments",
+    soon:    true,
+    video:   null,
+    bareNp:  { link: "https://lawcommission.gov.np/content/13397/electronic--electronic--traded-international-act--2063/" },
+    bareEn:  null,
+    summary: null
+  },
+  {
+    name:    "Negotiable Instruments Act, 2034",
+    area:    "Payments & Instruments",
+    soon:    true,
+    video:   null,
+    bareNp:  { link: "https://lawcommission.gov.np/content/12209/12209-negotiable-instruments-act-20/" },
+    bareEn:  null,
+    summary: null
+  },
+  {
+    name:    "Payment and Settlement Act, 2075",
+    area:    "Payments & Instruments",
+    soon:    true,
+    video:   null,
+    bareNp:  { link: "https://lawcommission.gov.np/content/12215/12215-payment-and-settlement-act-20/" },
+    bareEn:  null,
+    summary: null
+  },
+  {
+    name:    "Right to Information Act, 2064",
+    area:    "Compliance",
+    soon:    true,
+    video:   null,
+    bareNp:  { link: "https://lawcommission.gov.np/content/13400/rights-of-information-act--2064/" },
+    bareEn:  null,
+    summary: null
+  }
 ];
 
 // ------------------------------ Playlists ----------------------------------
