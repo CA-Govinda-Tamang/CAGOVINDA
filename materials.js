@@ -22,6 +22,10 @@
    - more: extra videos for the same Act, shown as "Also watch".
    - Exam corner with several PDFs on one card:
        files: [ { label: "...", file: "files/cap3/exam/X.pdf", version: "v1.0", date: "YYYY-MM-DD" }, ... ]
+   - Notices (home page "Notices and corrections"): add a new line at the TOP of
+     window.NOTICES, e.g.
+       { date: "2026-11-20", title: "...", text: "...", link: "#cap-iii", linkText: "Open CAP III" },
+     link and linkText are optional. Notices from the last 7 days show a "New" tag.
    - Banking: { from: "<exact CAP III Act name>", area: "..." } copies that CAP III
      card (video, Nepali link, English, summary). Update the CAP III card and the
      Banking card updates by itself. Compilations are not shown in Banking.
@@ -79,7 +83,7 @@ window.CAP3_ACTS = [
       { label: "CA Regulations, 2061", file: "files/cap3/english/CA_Regulations_2061_English.pdf", version: "v1.0", date: "2026-11-11" }
     ],
     summary: { file: "files/cap3/summary/NCA_Act_2053_Summary.pdf", version: "v1.0", date: "2026-11-11" },
-    comp:    { file: "files/cap3/compilation/NCA_Act_2053_Suggested_Answers_RTP_PEPT.pdf", version: "v1.0", date: "2026-11-15" }
+    comp:    { file: "files/cap3/compilation/NCA_Act_2053_Suggested_Answers_RTP_PEPT.pdf", version: "v1.1", date: "2026-11-16" }
   },
   {
     name:    "Securities Act, 2063",
@@ -221,8 +225,8 @@ window.CAP3_EXAM = [
     desc: "Every section asked in Exam, RTP and PEPT, with frequency badges, Top 10 per Act and memory tricks.",
     video: { link: "https://youtu.be/N4Pu4c9g59M", date: "2026-11-15" },
     files: [
-      { label: "Summary deck (slides used in the video)", file: "files/cap3/exam/Last_Minute_Revision_All_19_Acts_Summary.pdf", version: "v1.0", date: "2026-11-15" },
-      { label: "Compilation with detailed suggested answers", file: "files/cap3/exam/Last_Minute_Revision_All_19_Acts_Suggested_Answers.pdf", version: "v1.0", date: "2026-11-15" }
+      { label: "Summary deck (slides used in the video)", file: "files/cap3/exam/Last_Minute_Revision_All_19_Acts_Summary.pdf", version: "v1.1", date: "2026-11-16" },
+      { label: "Compilation with detailed suggested answers", file: "files/cap3/exam/Last_Minute_Revision_All_19_Acts_Suggested_Answers.pdf", version: "v1.1", date: "2026-11-16" }
     ] },
   { type: "Punishments and penalties", title: "Punishments and Penalties – All 19 Acts",
     desc: "Offences, fines, imprisonment, regulators' fines and appeal rules from the latest Nepali texts.",
@@ -426,6 +430,14 @@ window.BANK_ACTS = [
     bareEn:  null,
     summary: null
   }
+];
+
+// ----------------------- Notices and corrections ---------------------------
+// Newest first. Shown on the home page (latest 5).
+window.NOTICES = [
+  { date: "2026-11-16", title: "📌 Correction: NCA Act – Disciplinary Committee (Rule 67)",
+    text: "A member's term is one year, and the member MAY be nominated again after the term ends. The notes and slides on the website have been updated: Last Minute Revision summary deck and compilation, and the NCA Act compilation (now v1.1). Thanks to Binayak Regmi for pointing this out 🙏",
+    link: "#cap-iii", linkText: "Open CAP III" }
 ];
 
 // ------------------------------ Playlists ----------------------------------
